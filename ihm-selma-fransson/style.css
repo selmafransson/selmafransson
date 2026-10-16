@@ -1,5 +1,4 @@
 /* Responsiv portfolio för Selma Fransson (Ljust och mörkt läge) */
-:root,
 html {
     --paper: #f7fbff;
     --paper-header: rgba(247, 251, 255, .94);
@@ -130,7 +129,6 @@ button:focus-visible {
     touch-action: manipulation;
     user-select: none;
     -webkit-user-select: none;
-    box-sizing: border-box;
     transition: background .2s, color .2s, border-color .2s, transform .15s;
 }
 
@@ -142,9 +140,7 @@ button:focus-visible {
         transform: translateY(-50%) scale(1.06);
     }
 
-    [data-theme="dark"] .theme-toggle-btn:hover .icon-sun,
-    html.dark-mode .theme-toggle-btn:hover .icon-sun,
-    body.dark-mode .theme-toggle-btn:hover .icon-sun {
+    html[data-theme="dark"] .theme-toggle-btn:hover .icon-sun {
         color: white;
     }
 }
@@ -169,15 +165,11 @@ button:focus-visible {
     display: block;
 }
 
-[data-theme="dark"] .theme-toggle-btn .icon-moon,
-html.dark-mode .theme-toggle-btn .icon-moon,
-body.dark-mode .theme-toggle-btn .icon-moon {
+html[data-theme="dark"] .theme-toggle-btn .icon-moon {
     display: none !important;
 }
 
-[data-theme="dark"] .theme-toggle-btn .icon-sun,
-html.dark-mode .theme-toggle-btn .icon-sun,
-body.dark-mode .theme-toggle-btn .icon-sun {
+html[data-theme="dark"] .theme-toggle-btn .icon-sun {
     display: block !important;
     color: #e6b84d;
 }
@@ -270,7 +262,6 @@ body.dark-mode .theme-toggle-btn .icon-sun {
     border-radius: 50%;
     background: transparent;
     color: var(--accent);
-    box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     transition: background .2s, color .2s, border-color .2s, transform .2s;
@@ -311,6 +302,15 @@ body.dark-mode .theme-toggle-btn .icon-sun {
 
 .text-container {
     max-width: 820px;
+}
+
+.about-section .section-title ~ p:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.gtm-frame {
+    display: none;
+    visibility: hidden;
 }
 
 #hem {
