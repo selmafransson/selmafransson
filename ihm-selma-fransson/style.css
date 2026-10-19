@@ -586,26 +586,8 @@ p {
     margin-bottom: 24px;
 }
 
-.contact-email-link {
-    display: inline-block;
-    margin: 24px 0 14px;
-    font-family: Georgia, serif;
-    font-size: clamp(1.1rem, 2.4vw, 1.7rem);
-    text-decoration: none;
-    color: var(--ink);
-    border-bottom: 1px solid var(--exp-line);
-    padding-bottom: 5px;
-    overflow-wrap: anywhere;
-    max-width: 100%;
-    transition: border-color .2s, color .2s;
-}
-
-.contact-email-link:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
 .contact-email-action {
+    margin-top: 24px;
     margin-bottom: 28px;
 }
 
