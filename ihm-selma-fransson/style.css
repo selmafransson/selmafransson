@@ -623,52 +623,8 @@ p {
     margin-bottom: 28px;
 }
 
-.form-field {
-    margin-bottom: 20px;
-}
-
-.form-field label {
-    display: block;
-    margin-bottom: 7px;
-    color: var(--ink);
-    font-size: .8rem;
-    font-weight: 600;
-}
-
-.form-field input,
-.form-field textarea {
-    display: block;
+.hs-form-frame {
     width: 100%;
-    padding: 12px 14px;
-    border: 1px solid var(--card-border);
-    border-radius: 10px;
-    background: var(--paper);
-    color: var(--ink);
-    font: inherit;
-    font-size: .94rem;
-    line-height: 1.5;
-    transition: border-color .2s, box-shadow .2s;
-}
-
-.form-field textarea {
-    min-height: 140px;
-    resize: vertical;
-}
-
-.form-field input:focus,
-.form-field textarea:focus {
-    border-color: var(--accent);
-}
-
-.contact-submit {
-    cursor: pointer;
-    font-family: inherit;
-}
-
-.form-note {
-    margin-top: 15px;
-    font-size: .75rem;
-    line-height: 1.55;
 }
 
 @media (max-width: 1000px) {
