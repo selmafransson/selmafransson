@@ -14,9 +14,8 @@
         rel="stylesheet">
 
 
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <script src="https://js-eu1.hsforms.net/forms/embed/149565638.js" defer></script>
+    <link rel="stylesheet" href="style.css?v=contact-2">
+    <script src="script.js?v=contact-2"></script>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -211,16 +210,32 @@
                     <a href="mailto:selmafransson01@gmail.com" class="contact-email-link">
                         selmafransson01@gmail.com
                     </a>
+                    <div class="contact-email-action">
+                        <a href="mailto:selmafransson01@gmail.com" class="button button-secondary">Mejla mig <span aria-hidden="true">↗</span></a>
+                    </div>
                     <p>
                         Du kan även nå mig via min
                         <a href="https://www.linkedin.com/in/selmafransson" target="_blank" rel="noopener noreferrer">LinkedIn-profil</a>.
                     </p>
                 </div>
 
-                <div class="contact-form" aria-label="Kontaktformulär">
+                <form id="contactForm" class="contact-form" aria-label="Kontaktformulär">
                     <h3>Skriv till mig</h3>
-                    <div class="hs-form-frame" data-region="eu1" data-form-id="df5eea5e-67e5-4ec2-88ea-fdc095c9094c" data-portal-id="149565638"></div>
-                </div>
+                    <div class="form-field">
+                        <label for="contactName">Namn</label>
+                        <input id="contactName" name="firstname" type="text" autocomplete="name" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="contactEmail">E-post</label>
+                        <input id="contactEmail" name="email" type="email" autocomplete="email" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="contactMessage">Meddelande</label>
+                        <textarea id="contactMessage" name="message" rows="5" required></textarea>
+                    </div>
+                    <button class="button button-primary contact-submit" type="submit">Skicka meddelande <span aria-hidden="true">↗</span></button>
+                    <p id="contactStatus" class="form-status" role="status" aria-live="polite"></p>
+                </form>
             </div>
         </section>
     </main>
