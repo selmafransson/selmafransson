@@ -67,6 +67,24 @@
             }, { threshold: 0.25 });
             document.querySelectorAll('section[id]').forEach(function (section) { observer.observe(section); });
         }
+
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const formData = new FormData(contactForm);
+                const name = String(formData.get('name') || '').trim();
+                const email = String(formData.get('email') || '').trim();
+                const message = String(formData.get('message') || '').trim();
+                if (!name || !email || !message) {
+                    contactForm.reportValidity();
+                    return;
+                }
+                const subject = 'Kontakt via hemsidan från ' + name;
+                const body = 'Namn: ' + name + '\nE-post: ' + email + '\n\nMeddelande:\n' + message;
+                window.location.href = 'mailto:selmafransson01@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            });
+        }
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setupPage);
