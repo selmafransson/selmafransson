@@ -200,19 +200,39 @@
 
         <!-- 5. KONTAKT -->
         <section id="kontakt" class="section contact-section">
-            <div class="container text-container">
-                <p class="section-kicker">Låt oss prata</p>
-                <h2 class="section-title">Kontakt</h2>
-                <p>
-                    Vill du komma i kontakt med mig, diskutera ett samarbete eller en spännande möjlighet?
-                </p>
-                <a href="mailto:selmafransson01@gmail.com" class="contact-email-link">
-                    selmafransson01@gmail.com
-                </a>
-                <p>
-                    Du kan även nå mig via min
-                    <a href="https://www.linkedin.com/in/selmafransson" target="_blank" rel="noopener noreferrer">LinkedIn-profil</a>.
-                </p>
+            <div class="container contact-layout">
+                <div class="contact-intro">
+                    <p class="section-kicker">Låt oss prata</p>
+                    <h2 class="section-title">Kontakt</h2>
+                    <p>
+                        Vill du komma i kontakt med mig, diskutera ett samarbete eller en spännande möjlighet?
+                    </p>
+                    <a href="mailto:selmafransson01@gmail.com" class="contact-email-link">
+                        selmafransson01@gmail.com
+                    </a>
+                    <p>
+                        Du kan även nå mig via min
+                        <a href="https://www.linkedin.com/in/selmafransson" target="_blank" rel="noopener noreferrer">LinkedIn-profil</a>.
+                    </p>
+                </div>
+
+                <form id="contactForm" class="contact-form" aria-label="Kontaktformulär">
+                    <h3>Skriv till mig</h3>
+                    <div class="form-field">
+                        <label for="contactName">Namn</label>
+                        <input id="contactName" name="name" type="text" autocomplete="name" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="contactEmail">E-post</label>
+                        <input id="contactEmail" name="email" type="email" autocomplete="email" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="contactMessage">Meddelande</label>
+                        <textarea id="contactMessage" name="message" rows="5" required></textarea>
+                    </div>
+                    <button class="button button-primary contact-submit" type="submit">Skicka meddelande <span aria-hidden="true">↗</span></button>
+                    <p class="form-note">Ditt meddelande öppnas i din e-postapp så att du kan skicka det därifrån.</p>
+                </form>
             </div>
         </section>
     </main>
