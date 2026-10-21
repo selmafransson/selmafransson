@@ -31,7 +31,7 @@ html[data-theme="dark"] {
     --accent-light: #40383f;
     --line: #624a47;
     --sec-about: #35313c;
-    --sec-project: #501c25;
+    --sec-project: #35313c;
     --sec-contact: #3c2b2b;
     --tag-border: #8d6b64;
     color-scheme: dark;
@@ -137,9 +137,9 @@ html[data-theme="dark"] .theme-toggle-btn .icon-sun { display: block; color: #e6
     transition: background .2s, color .2s;
 }
 .button-primary { color: var(--button-ink); background: var(--accent); }
-.button-primary:hover { color: var(--button-ink); background: var(--accent-hover); border-color: var(--accent-hover); }
+.button-primary:hover, .button-primary:focus-visible { color: var(--button-ink); background: var(--accent-hover); border-color: var(--accent-hover); }
 .button-secondary { color: var(--accent); background: transparent; }
-.button-secondary:hover { background: var(--accent-light); }
+.button-secondary:hover, .button-secondary:focus-visible { color: var(--button-ink); background: var(--accent); }
 
 /* Introduktion */
 #hem { min-height: 740px; display: flex; align-items: center; padding: 64px 6% 80px; background: var(--paper); }
@@ -152,7 +152,7 @@ html[data-theme="dark"] .theme-toggle-btn .icon-sun { display: block; color: #e6
 .hero-bio { max-width: 420px; font-size: 14px; line-height: 1.85; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 32px; }
 .hero-image-wrapper { position: relative; }
-.hero-image-wrapper::after { content: '↙'; position: absolute; bottom: 15px; left: -35px; color: var(--ink); font: 80px Georgia; transform: rotate(15deg); }
+
 .hero-image { display: block; width: 100%; height: 540px; border-radius: 180px 180px 0 0; object-fit: cover; object-position: center 40%; }
 
 /* Om mig */
@@ -184,11 +184,21 @@ html[data-theme="dark"] .theme-toggle-btn .icon-sun { display: block; color: #e6
     --accent-hover: #eff4ff;
     background: var(--sec-project);
 }
+/* Projekt följer samma palett som övriga sektioner i mörkt läge. */
+html[data-theme="dark"] #projekt {
+    --ink: #f8edda;
+    --muted: #ddcbbb;
+    --accent: #e5bdaf;
+    --line: #624a47;
+    --accent-light: #40383f;
+    --button-ink: #291d1e;
+    --accent-hover: #f2d6cc;
+}
 #projekt .text-container { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
 #projekt .section-kicker, #projekt .section-title { grid-column: 1 / -1; }
 #projekt .section-title { margin-bottom: 22px; }
-.project-item { border: 1px solid #a46970; padding: 34px 28px; display: flex; flex-direction: column; align-items: flex-start; transition: background .2s; }
-.project-number { font-family: 'Instrument Serif', Georgia, serif; font-size: 64px; line-height: 1; letter-spacing: .1em; color: #d8e5fc; margin-bottom: 36px; }
+.project-item { border: 1px solid var(--line); padding: 34px 28px; display: flex; flex-direction: column; align-items: flex-start; transition: background .2s; }
+.project-number { font-family: 'Instrument Serif', Georgia, serif; font-size: 64px; line-height: 1; letter-spacing: .1em; color: var(--accent); margin-bottom: 36px; }
 .project-name { font-size: 32px; }
 .project-item p { font-size: 13px; }
 .project-item .button { margin-top: 24px; }
@@ -206,7 +216,9 @@ html[data-theme="dark"] .theme-toggle-btn .icon-sun { display: block; color: #e6
 
 /* Muspekare, surfplatta och mobil */
 @media (hover: hover) and (pointer: fine) {
-    .theme-toggle-btn:hover, .social-btn:hover { color: white; background: var(--accent); border-color: var(--accent); }
+    .theme-toggle-btn:hover, .social-btn:hover { color: #291d1e; background: #d8e5fc; border-color: #d8e5fc; }
+    .theme-toggle-btn:hover .icon-sun { color: inherit; }
+    .mobile-menu-btn:hover { background: #ffffff26; border-radius: 6px; }
     .social-btn:hover { transform: scale(1.06); }
     .theme-toggle-btn:hover { transform: translateY(-50%) scale(1.06); }
     .project-item:hover { background: var(--accent-light); }
@@ -238,7 +250,7 @@ html[data-theme="dark"] .theme-toggle-btn .icon-sun { display: block; color: #e6
     .hero-title { font-size: clamp(75px, 18vw, 115px); margin: 0 0 25px; }
     .hero-image-wrapper { width: 100%; max-width: 400px; align-self: center; }
     .hero-image { height: 410px; border-radius: 150px 150px 0 0; }
-    .hero-image-wrapper::after { left: -10px; }
+
     .hero-actions { justify-content: flex-start; margin-top: 26px; }
     .eyebrow { font-size: 9px; margin-bottom: 17px; }
     #om-mig .text-container, #erfarenhet .text-container, #projekt .text-container { display: block; }
