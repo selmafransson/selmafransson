@@ -68,42 +68,6 @@
             document.querySelectorAll('section[id]').forEach(function (section) { observer.observe(section); });
         }
 
-        const contactForm = document.getElementById('contactForm');
-        const contactStatus = document.getElementById('contactStatus');
-        if (contactForm && contactStatus) {
-            contactForm.addEventListener('submit', async function (event) {
-                event.preventDefault();
-                const submitButton = contactForm.querySelector('button[type="submit"]');
-                const formData = new FormData(contactForm);
-                const fields = ['firstname', 'email', 'message'].map(function (name) {
-                    return { objectTypeId: '0-1', name: name, value: String(formData.get(name) || '').trim() };
-                });
-
-                contactStatus.textContent = 'Skickar ditt meddelande…';
-                contactStatus.removeAttribute('data-state');
-                submitButton.disabled = true;
-
-                try {
-                    const response = await fetch('https://api.hsforms.com/submissions/v3/integration/submit/149565638/df5eea5e-67e5-4ec2-88ea-fdc095c9094c', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            fields: fields,
-                            context: { pageUri: window.location.href, pageName: document.title }
-                        })
-                    });
-                    if (!response.ok) throw new Error('HubSpot rejected the submission');
-                    contactForm.reset();
-                    contactStatus.textContent = 'Tack! Ditt meddelande har skickats.';
-                    contactStatus.dataset.state = 'success';
-                } catch (error) {
-                    contactStatus.textContent = 'Det gick inte att skicka just nu. Prova igen eller använd mejlknappen till vänster.';
-                    contactStatus.dataset.state = 'error';
-                } finally {
-                    submitButton.disabled = false;
-                }
-            });
-        }
 
     }
 

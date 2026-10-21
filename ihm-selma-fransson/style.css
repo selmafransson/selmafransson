@@ -20,7 +20,6 @@ html {
     --btn-border: #bfdbef;
     --shadow-header: rgba(32, 51, 74, .07);
     --shadow-nav: rgba(32, 51, 74, .12);
-    --form-surface: #ffffff;
     color-scheme: light;
 }
 
@@ -45,7 +44,6 @@ html[data-theme="dark"] {
     --btn-border: #41617a;
     --shadow-header: rgba(0, 0, 0, .4);
     --shadow-nav: rgba(0, 0, 0, .5);
-    --form-surface: #142638;
     color-scheme: dark;
 }
 
@@ -242,7 +240,7 @@ html[data-theme="dark"] .theme-toggle-btn .icon-sun {
     width: 100%;
 }
 
-/* Social nav (LinkedIn) längst till höger */
+/* Social nav (LinkedIn och Instagram) längst till höger */
 .social-nav {
     position: absolute;
     right: 40px;
@@ -572,10 +570,7 @@ p {
 }
 
 .contact-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: center;
-    gap: clamp(48px, 7vw, 100px);
+    width: 100%;
 }
 
 .contact-intro {
@@ -593,85 +588,6 @@ p {
 
 .contact-intro p:last-child {
     font-size: .85rem;
-}
-
-.contact-form {
-    padding: clamp(24px, 3vw, 40px);
-    border: 1px solid var(--card-border);
-    border-radius: 22px;
-    background: var(--form-surface);
-    box-shadow: 0 18px 50px var(--shadow-header);
-}
-
-.contact-form h3 {
-    font-size: 1.75rem;
-    line-height: 1.25;
-    margin-bottom: 28px;
-}
-
-.form-field {
-    margin-bottom: 20px;
-}
-
-.form-field label {
-    display: block;
-    margin-bottom: 7px;
-    color: var(--ink);
-    font-size: .8rem;
-    font-weight: 600;
-}
-
-.form-field input,
-.form-field textarea {
-    display: block;
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid var(--card-border);
-    border-radius: 10px;
-    background: var(--paper);
-    color: var(--ink);
-    font: inherit;
-    font-size: .94rem;
-    line-height: 1.5;
-    transition: border-color .2s;
-}
-
-.form-field textarea {
-    min-height: 140px;
-    resize: vertical;
-}
-
-.form-field input:focus,
-.form-field textarea:focus {
-    border-color: var(--accent);
-}
-
-.contact-submit {
-    cursor: pointer;
-    font-family: inherit;
-}
-
-.contact-submit:disabled {
-    cursor: wait;
-    opacity: .7;
-}
-
-.form-status {
-    margin-top: 15px;
-    font-size: .8rem;
-    line-height: 1.55;
-}
-
-.form-status:empty {
-    display: none;
-}
-
-.form-status[data-state="success"] {
-    color: var(--accent);
-}
-
-.form-status[data-state="error"] {
-    color: var(--ink);
 }
 
 @media (max-width: 1000px) {
@@ -859,10 +775,6 @@ p {
         padding: 72px 24px;
     }
 
-    .contact-layout {
-        grid-template-columns: 1fr;
-        gap: 38px;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
