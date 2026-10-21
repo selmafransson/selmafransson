@@ -1,8 +1,7 @@
-// Apply the theme in the head and listen for taps before the rest of the page finishes loading.
+// Återställ valt tema tidigt för att undvika att fel tema visas vid sidladdning.
 (function () {
-    const storageKey = 'selma-theme';
+    const storageKey = 'selma-design-theme';
     const root = document.documentElement;
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     function savedTheme() {
         try {
@@ -22,26 +21,20 @@
             button.setAttribute('aria-pressed', String(isDark));
         }
         const themeColor = document.querySelector('meta[name="theme-color"]');
-        if (themeColor) themeColor.content = isDark ? '#111d2b' : '#f7fbff';
+        if (themeColor) themeColor.content = getComputedStyle(root).getPropertyValue('--paper').trim();
     }
 
-    renderTheme(savedTheme() || (systemTheme.matches ? 'dark' : 'light'));
+    renderTheme(savedTheme() || 'light');
 
     document.addEventListener('click', function (event) {
         if (!event.target.closest || !event.target.closest('#themeToggle')) return;
         const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
         renderTheme(nextTheme);
-        try { localStorage.setItem(storageKey, nextTheme); } catch (error) { /* Storage may be unavailable. */ }
+        try { localStorage.setItem(storageKey, nextTheme); } catch (error) { /* Temaväxling fungerar även när lagring inte är tillgänglig. */ }
     });
 
-    const onSystemChange = function (event) {
-        if (!savedTheme()) renderTheme(event.matches ? 'dark' : 'light');
-    };
-    if (systemTheme.addEventListener) systemTheme.addEventListener('change', onSystemChange);
-    else if (systemTheme.addListener) systemTheme.addListener(onSystemChange);
-
     window.addEventListener('storage', function (event) {
-        if (event.key === storageKey) renderTheme(savedTheme() || (systemTheme.matches ? 'dark' : 'light'));
+        if (event.key === storageKey) renderTheme(savedTheme() || 'light');
     });
 
     function setupPage() {
@@ -67,10 +60,18 @@
             }, { threshold: 0.25 });
             document.querySelectorAll('section[id]').forEach(function (section) { observer.observe(section); });
         }
-
-
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setupPage);
     else setupPage();
 })();
+
+// Befintlig Google Tag Manager-installation.
+(function (window, document) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+    const tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PZT4K5DB';
+    document.head.appendChild(tag);
+})(window, document);

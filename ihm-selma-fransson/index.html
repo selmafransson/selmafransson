@@ -4,47 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f7fbff">
+    <meta name="theme-color" content="#f8f3e9">
     <title>Selma Fransson - Digital Marketing Specialist</title>
-
-    <!-- Google Fonts för modern och snygg typografi -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
         rel="stylesheet">
 
-
-    <link rel="stylesheet" href="style.css?v=social-20261021">
-    <script src="script.js?v=social-20261021"></script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PZT4K5DB');</script>
-    <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="style.css?v=design-20261021">
+    <script src="script.js?v=design-20261021"></script>
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZT4K5DB" height="0" width="0"
-            class="gtm-frame"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- Header med tema-knapp till vänster, centrerade menyval och sociala medier till höger -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZT4K5DB"
+            height="0" width="0" class="gtm-frame" title="Google Tag Manager"></iframe>
+    </noscript>
     <header class="site-header">
-        <!-- Knapp för växling till mörkt läge längst till vänster (fungerar på mobil och dator) -->
+        <a class="wordmark" href="#hem" aria-label="Selma Fransson, startsida">SF</a>
         <button type="button" id="themeToggle" class="theme-toggle-btn" aria-label="Växla till mörkt läge"
             title="Växla till mörkt läge" aria-pressed="false">
-            <!-- Månikon i ljust läge (klicka för att aktivera mörkt läge) -->
             <svg class="theme-icon icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 aria-hidden="true">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
-            <!-- Solikon i mörkt läge (klicka för att aktivera ljust läge) -->
             <svg class="theme-icon icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 aria-hidden="true">
@@ -59,8 +43,6 @@
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
         </button>
-
-        <!-- Menyval i skift (centrerade på dator, nedfällbara på telefon) -->
         <nav class="site-nav" id="siteNav" aria-label="Huvudnavigation">
             <ul class="nav-links">
                 <li><a href="#hem" class="nav-link active">HEM</a></li>
@@ -70,16 +52,12 @@
                 <li><a href="#kontakt" class="nav-link">KONTAKT</a></li>
             </ul>
         </nav>
-
-        <!-- Ankarlänkar styr menyn även när filvisningen blockerar JavaScript. -->
         <a href="#siteNav" class="mobile-menu-btn menu-open" aria-label="Öppna meny" aria-controls="siteNav">
             <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </a>
-        <a href="#meny-stangd" class="mobile-menu-btn menu-close" aria-label="Stäng meny" aria-controls="siteNav">
+        <a href="#" class="mobile-menu-btn menu-close" aria-label="Stäng meny" aria-controls="siteNav">
             <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </a>
-
-        <!-- LinkedIn och Instagram längst till höger -->
         <div class="social-nav">
             <a href="https://www.linkedin.com/in/selmafransson" target="_blank" rel="noopener noreferrer"
                 class="social-btn linkedin-btn" aria-label="Selma Franssons LinkedIn-profil" title="LinkedIn">
@@ -100,13 +78,11 @@
     </header>
 
     <main>
-        <!-- 1. HEM (FÖRSTA SIDAN: TEXT TILL VÄNSTER, BILD TILL HÖGER) -->
         <section id="hem" class="section">
             <div class="container hero-layout">
-                <!-- Text till vänster (på mobil: under bilden) -->
                 <div class="hero-text">
                     <p class="eyebrow">Analys · Kreativitet · Digital strategi</p>
-                    <h1 class="hero-title">Selma Fransson</h1>
+                    <h1 class="hero-title">Selma <em>Fransson</em></h1>
                     <p class="hero-role">Digital Marketing Specialist · Studerande på IHM</p>
                     <p class="hero-bio">
                         Jag studerar till Digital Marketing Specialist på IHM Business School och är framförallt
@@ -119,16 +95,11 @@
                         <a href="#kontakt" class="button button-secondary">Kontakta mig</a>
                     </div>
                 </div>
-
-                <!-- Bild till höger (på mobil: centrerad över texten) -->
                 <div class="hero-image-wrapper">
-                    <!-- Porträttbild -->
                     <img src="img/selma-portrait.jpg" alt="Selma Fransson" class="hero-image">
                 </div>
             </div>
         </section>
-
-        <!-- 2. OM MIG (NY SIDA NÄR MAN SCROLLAR NER) -->
         <section id="om-mig" class="section about-section">
             <div class="container text-container">
                 <p class="section-kicker">Lär känna mig</p>
@@ -150,8 +121,6 @@
                 </p>
             </div>
         </section>
-
-        <!-- 3. ERFARENHET -->
         <section id="erfarenhet" class="section">
             <div class="container text-container">
                 <p class="section-kicker">Utbildning & kompetens</p>
@@ -185,8 +154,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- 4. PROJEKT -->
         <section id="projekt" class="section">
             <div class="container text-container">
                 <p class="section-kicker">Från strategi till innehåll</p>
@@ -226,8 +193,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- 5. KONTAKT -->
         <section id="kontakt" class="section contact-section">
             <div class="container text-container contact-layout">
                 <div class="contact-intro">
@@ -249,6 +214,11 @@
             </div>
         </section>
     </main>
+
+    <footer class="design-footer">
+        <span>Selma Fransson</span>
+        <a href="#hem">Till toppen ↑</a>
+    </footer>
 
 </body>
 
